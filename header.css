@@ -1,0 +1,11 @@
+.top {
+    background-color: #f8f8f8;
+    color: rgb(30, 59, 30);
+    text-align:center;
+    padding: 8px;
+    font-size: 11px;
+    text-transform: uppercase; /*convierteel texto en mayusculas*/    
+}
+.nav {
+    display: flex;
+}
