@@ -6,6 +6,23 @@
     font-size: 11px;
     text-transform: uppercase; /*convierteel texto en mayusculas*/    
 }
-.nav {
+.menu-nav {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
 }
+/*pendiete el logo por organizar con la imageny mirar para que srive lo del estilo en letra*/
+.logo {
+    font-size: 28px;
+    font-weight: normal;
+    letter-spacing: 4px;
+    
+}
+.menu-izquierdo, .menu-derecho {
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
