@@ -1,28 +1,31 @@
 .top {
-    background-color: #f8f8f8;
+    background-color: rgb(253, 253, 253);
     color: rgb(65, 204, 65);
     text-align:center;
     padding: 8px;
     font-size: 11px;
-    text-transform: uppercase; /*convierteel texto en mayusculas*/    
+    text-transform: uppercase;
 }
+    
 .menu-nav {
     display: flex;
+    background-color: rgb(253, 253, 253);
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
+    position: fixed;
+    width: 100%;
+
 }
 /*pendiete el logo por organizar con la imageny mirar para que srive lo del estilo en letra*/
-.logo {
-    font-size: 28px;
-    font-weight: normal;
-    letter-spacing: 4px;
-    
-}
+
 .menu-izquierdo, .menu-derecho {
     display: flex;
     gap: 20px;
     font-size: 20px;
     cursor: pointer;
+}
+header .menu-nav:hover {
+    color: rgb(224, 13, 94);
 }
 

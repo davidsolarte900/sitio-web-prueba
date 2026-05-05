@@ -4,15 +4,19 @@
 
 saludar()*/
 
-const edad = 25;
-const experiencia = true;
+let edad = 25;
+let experiencia = true;
+
 if (edad >= 18) {
-    console.log(`puedes aplicar apuesto senior.`);
+    if (experiencia) {
+        console.log(`puedes aplicar a puestos senior.`);
+    }
+    else {
+        console.log(`puedes postularte a puestos junior.`);
+    }
 }
-{
-    console.log(`puedes aplicar a puesto junior.`);
-}
-{
-    console.log(`aun no puedes aplicar.`);
-}
+    else {
+        console.log(`aun no puedes aplicar.`);
+    }
+
 

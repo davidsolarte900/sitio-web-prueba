@@ -1,0 +1,29 @@
+.catalogo {
+    margin-top: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+.tarjetas {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.producto-card {
+    flex: 1;
+    min-width: 250px;
+    max-width: 450px;
+}
+.producto-card img {
+    flex: 1;
+    max-width: 450px;
+    min-width: 250px;
+}
+.producto h2 {
+    text-align: center;
+    font-family: sans-serif;
+    margin-top: 10px;
+}
