@@ -83,6 +83,9 @@ for (let i = 0; i < frutas.length; i++) {
     console.log(`indice ${i}: ${frutas[i]}`);
 }
 
+/*promesas: en js es un objeto que representa la finalizacion o el fracaso eventual de una op asincrona.*/
+
+
 
 
 
