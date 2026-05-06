@@ -3,7 +3,7 @@
 };
 
 saludar()*/
-
+/*
 let edad = 25;
 let experiencia = true;
 
@@ -18,5 +18,9 @@ if (edad >= 18) {
     else {
         console.log(`aun no puedes aplicar.`);
     }
+        
+
+    console.log(`hola`)
 
 
+*/
