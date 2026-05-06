@@ -77,14 +77,45 @@ carro.frenar(20);
 
 /*ciclos o bucles: estructutras que repiten un bloque de codigo varias veces miestras se cumpla una condicion, optimizando tareas repetitivas y facilitando la interaccion sore datos */
 //ejempl:
-let frutas = [`manzana`, `banano`, `uva`, `naranja`];
+let frutass = [`manzana`, `banano`, `uva`, `naranja`];
 // i< frutas.length asegura que recorra todos los elementos
 for (let i = 0; i < frutas.length; i++) {
-    console.log(`indice ${i}: ${frutas[i]}`);
+    console.log(`indice ${i}: ${frutass[i]}`);
 }
 
 /*promesas: en js es un objeto que representa la finalizacion o el fracaso eventual de una op asincrona.*/
+// 1. crear la promesa
+const obtenerdatos = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        // simulamos exito
+        resolve(`!Datos cargados con exito¡`);
+    }, 2000); // 2 segundos
+});
 
+//2. consumir la pormesa
+console.log(`iniciando...`);
+
+//eje #2 promesas con exito o error:
+let verificarservidor = new promise ((resolve, rejet) => {
+    let exito = matchMedia.random() > 0.5; // 50% probabilidada
+    if(exito) {
+        resolve(`servidor conectado`);
+    } else {
+        rejet(`error: no se pudo conectar`);
+    }
+});
+verificarservidor
+.then((mensaje) => console.log(mensaje)) //si exito == true
+.cach((erorr) => console.log(error)) //si exito == false
+.finally(() => console.log(`intento finalizado`)); //se ejecuta siempre
+
+//funcion fetch: se utiliza para realizar solicitudes de red (peticion http) para obtenr recursos:
+//eje:
+
+fetch(`http://api.example.com/data`)
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error(`error:`, error));
 
 
 
