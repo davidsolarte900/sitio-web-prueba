@@ -96,8 +96,8 @@ const obtenerdatos = new Promise((resolve, reject) => {
 console.log(`iniciando...`);
 
 //eje #2 promesas con exito o error:
-let verificarservidor = new promise ((resolve, rejet) => {
-    let exito = matchMedia.random() > 0.5; // 50% probabilidada
+let verificarservidor = new Promise ((resolve, reject) => {
+    let exito = Math.random() > 0.5; // 50% probabilidada
     if(exito) {
         resolve(`servidor conectado`);
     } else {
@@ -106,13 +106,13 @@ let verificarservidor = new promise ((resolve, rejet) => {
 });
 verificarservidor
 .then((mensaje) => console.log(mensaje)) //si exito == true
-.cach((erorr) => console.log(error)) //si exito == false
+.catch((erorr) => console.log(error)) //si exito == false
 .finally(() => console.log(`intento finalizado`)); //se ejecuta siempre
 
 //funcion fetch: se utiliza para realizar solicitudes de red (peticion http) para obtenr recursos:
 //eje:
 
-fetch(`http://api.example.com/data`)
+fetch(`https://api.example.com/data`)
 .then(response => response.json())
 .then(data => console.log(data))
 .catch(error => console.error(`error:`, error));
