@@ -1,4 +1,4 @@
-/*condiciones anidadas: son estructuras if, else if o  else dentro de otro bloque condicional.*/
+condiciones anidadas: son estructuras if, else if o  else dentro de otro bloque condicional.
 
 let edad = 25;
 let experiencia = true;
@@ -12,7 +12,7 @@ if (edad >=18){
     console.log (`aun no puedes aplicar.`);
 }
 
-/* operadores logicos: compara 2 expresiones eje: && , || */
+ /*operadores logicos: compara 2 expresiones eje: && , || */
 
 let tieneedad = true;
 let tienelicencia = true;
@@ -112,10 +112,11 @@ verificarservidor
 //funcion fetch: se utiliza para realizar solicitudes de red (peticion http) para obtenr recursos:
 //eje:
 
-fetch(`https://api.example.com/data`)
+/*fetch(`https://api.example.com/data`)
 .then(response => response.json())
 .then(data => console.log(data))
-.catch(error => console.error(`error:`, error));
+.catch(error => console.error(`error:`, error));*/
+
 
 
 
