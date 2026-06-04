@@ -15,5 +15,34 @@ h1 {
 main{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 1%;
+  margin: 0 auto;
+}
+article{
+  border-radius: 15px;
+  box-shadow: 0 5px 15px;
+  overflow: hidden;
+  padding: 14px;
+  transition: all 0.3s ease;
+}
 
+article:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px;
+}
+
+article .image-container img{
+  width: 100%;
+  display: block;
+}
+article span, article p {
+  font-size:1rem;
+  color: rgb(68, 38, 62);
+  margin-bottom: 10px;
+}
+
+article span {
+  display: inline-block;
+  font-weight: bold;
 }
