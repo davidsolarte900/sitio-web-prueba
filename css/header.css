@@ -1,22 +1,18 @@
-.top {
+/*.top {
     background-color: rgb(253, 253, 253);
     color: rgb(65, 204, 65);
     text-align:center;
     padding: 8px;
     font-size: 11px;
-    text-transform: uppercase;
-
-}
-    
+}   */
 .menu-nav {
     display: flex;
-    background-color: rgb(253, 253, 253);
+    background-color: white;
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
     position: fixed;
     width: 100%;
-
 }
 /*pendiete el logo por organizar con la imageny mirar para que srive lo del estilo en letra*/
 
@@ -28,6 +24,7 @@
 }
 header .menu-nav:hover {
     color: rgb(224, 13, 94);
+    margin-bottom: 20px;
 }
 
 .logo-container {
@@ -35,9 +32,10 @@ header .menu-nav:hover {
     vertical-align: middle;
 }
 .site-logo {
-    max-height: 60px; /* Ajusta este valor según la altura de tu barra */
-    max-width: 60px;
+    max-height: 120px; /* Ajusta este valor según la altura de tu barra */
+    max-width: 90px;
     width: auto;      /* Mantiene la proporción original sin deformar */
     display: block;
     object-fit: contain;
+    border-radius: 20px;
 }
