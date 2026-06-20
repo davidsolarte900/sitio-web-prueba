@@ -1,10 +1,3 @@
-/*.top {
-    background-color: rgb(253, 253, 253);
-    color: rgb(65, 204, 65);
-    text-align:center;
-    padding: 8px;
-    font-size: 11px;
-}   */
 .menu-nav {
     display: flex;
     background-color: white;
@@ -14,14 +7,13 @@
     position: fixed;
     width: 100%;
 }
-/*pendiete el logo por organizar con la imageny mirar para que srive lo del estilo en letra*/
-
 .menu-izquierdo, .menu-derecho {
     display: flex;
     gap: 20px;
     font-size: 20px;
     cursor: pointer;
 }
+
 header .menu-nav:hover {
     color: rgb(224, 13, 94);
     margin-bottom: 20px;
@@ -31,10 +23,11 @@ header .menu-nav:hover {
     display: inline-block;
     vertical-align: middle;
 }
+
 .site-logo {
     max-height: 120px; /* Ajusta este valor según la altura de tu barra */
     max-width: 90px;
-    width: auto;      /* Mantiene la proporción original sin deformar */
+    width: auto;       /* Mantiene la proporción original sin deformar */
     display: block;
     object-fit: contain;
     border-radius: 20px;
