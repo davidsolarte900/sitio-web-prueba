@@ -6,6 +6,7 @@ const connectDb = require('./config/db');
 const auth = require('./routes/auth.routes');
 
 
+
 connectDb();
 app.use(express.json());
 
