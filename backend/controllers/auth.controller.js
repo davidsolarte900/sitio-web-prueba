@@ -1,35 +1,28 @@
-/* registrar y autenticar usuario*/
 
 const { request } = require('express');
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken')
 
 const registrar = async (request, response) => {
     try {
         const { nombre, email, password } = request.body;
-        
-
-        // 1. Validar si ya existe el correo
         let user = await User.findOne({ email: email });
         if (user) {
             return response.status(400).json({ msg: `el usuario ${email} ya existe en la base de datos` });
         }
 
-        // 1. Generamos el salt y encriptamos la contraseña del request.body
 const salt = await bcrypt.genSalt(10);
 const passwordEncriptado = await bcrypt.hash(password, salt);
 
-// 2. Le pasamos 'passwordEncriptado' al modelo de Mongoose
 user = new User({
     nombre,
     email,
-    password: passwordEncriptado // <--- CORRECCIÓN CLAVE
+    password: passwordEncriptado 
 });
 
 await user.save();
 
-
-        // 4. Enviar respuesta de éxito
         return response.status(201).json({
             msg: "el usuario se a registrado correctamente"
         });
@@ -49,8 +42,14 @@ const login  = async(request, response) => {
         const passwordsCoinciden = await bcrypt.compare(password, user.password);
         if(!passwordsCoinciden) return response.status(400).json({msg: 'constraseña incorrecta'});
 
+        const token = jwt.sign(
+            {id: user._id },
+            process.env.JWT_SECRET,
+            {expiresIn: '1h'}
+        )
+
         response.json({
-            msg: 'iniciste sesion!!'
+            token
         })
 
     } catch (error) {
