@@ -1,10 +1,27 @@
 const dotenv = require ('dotenv');
+dotenv.config ();
 const express = require('express');
 const app = express();
+const connectDb = require('./config/db');
+const auth = require('./routes/auth.routes');
+const task = require('./routes/task.routes');
 
-dotenv.config ();
+
+
+
+connectDb();
+app.use(express.json());
+
+app.use('/api/auth', auth); 
+app.use('/api/task', task);
+
+
+
 const PORT = process.env.PORT
 
 app.listen(PORT, () => {
-    console.log(`conectamos a puesrto ${PORT}`)
-})
+    console.log(`conectamos a puerto ${PORT}`)
+});
+
+
+
