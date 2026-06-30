@@ -13,7 +13,7 @@ connectDb();
 app.use(express.json());
 
 app.use('/api/auth', auth); 
-app.use('/api/task', task)
+app.use('/api/task', task);
 
 
 

@@ -1,11 +1,10 @@
 const express = require('express');
 const router = express.Router();
+const validarToken = require('../middlewares/auth.middleware');
 
 const { crearTarea } = require('../controllers/task.controller');
 
-router.post('/', crearTarea);
+router.post('/', validarToken, crearTarea);
 
-module.exports = {
-    router
-};
+module.exports = router;
 

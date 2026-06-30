@@ -1,7 +1,9 @@
 const jwt = require('jsonwebtoken');
 
 module.exports = (req, res, next) => {
-    const token =req.header('Autorization');
+    const headerAuthorization = req.header('Authorization');
+    const token = headerAuthorization.split(' ')[1];
+
 
     if(!token) {
         return res.status(401).json({
@@ -15,7 +17,7 @@ module.exports = (req, res, next) => {
         
     } catch(error) {
         return res.status(401).json({
-            msg: 'token invalido'
+            msg: `token invalido error: ${error.message}`
         })
     }
-}
+};
