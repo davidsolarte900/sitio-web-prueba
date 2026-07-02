@@ -1,1 +1,70 @@
-<p>register works!</p>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h2 class="text-center mb-4">
+                        registro
+                    </h2>
+                    <div 
+                        class="alert alert-danger"
+                        *ngIf="error"                    
+                    >
+                        {{ error }}
+                    </div>
+
+                    <form
+                        [formGroup]="form"
+                        (ngSubmit)="registrar()"
+                    >
+                        <div class="mb-3">
+                            <label class="form-label">
+                                nombre
+                            </label>
+                            <input
+                            type="text"
+                                class="form-control"
+                                formControlName="nombre"
+                            >
+                            <small
+                            class="text-danger"
+                                *ngIf="
+                                    form.get('nombre')?.touched &&
+                                    form.get('nombre')?.invalid
+                                "
+                            >
+                                el nombre es requerido y debe tener minimo 3 caracteres
+                            </small>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">
+                                email
+                            </label>
+                            <input
+                            type="text"
+                                class="form-control"
+                                formControlName="email"
+                            >
+                            <small
+                            class="text-danger"
+                                *ngIf="
+                                    form.get('email')?.touched &&
+                                    form.get('email')?.invalid
+                                "
+                            >
+                                el email es invalido
+                            </small>
+                        </div>
+                        <button
+                            class="btn btn-primary w-100"
+                            [disabled]="cargando">
+                            {{ cargando ? 'registrando...' : 'registrarse' }}
+                            </button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
