@@ -16,5 +16,12 @@ registrar(usuario: User): Observable<any> {
     `${this.api}/auth/registrar`,
     usuario
   )
+};
+login(usuario: User): Observable<any> {
+  return this.http.post(
+    `${this.api}/auth/login`,
+    usuario
+  )
 }
-}
+};
+

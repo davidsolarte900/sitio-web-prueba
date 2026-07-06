@@ -19,7 +19,7 @@
                     >
                         <div class="mb-3">
                             <label class="form-label">
-                                nombre
+                                Nombre
                             </label>
                             <input
                             type="text"
@@ -38,10 +38,10 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">
-                                email
+                                Email
                             </label>
                             <input
-                            type="text"
+                            type="email"
                                 class="form-control"
                                 formControlName="email"
                             >
@@ -53,6 +53,25 @@
                                 "
                             >
                                 el email es invalido
+                            </small>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">
+                                Password
+                            </label>
+                            <input
+                            type="password"
+                                class="form-control"
+                                formControlName="password"
+                            >
+                            <small
+                            class="text-danger"
+                                *ngIf="
+                                    form.get('password')?.touched &&
+                                    form.get('password')?.invalid
+                                "
+                            >
+                                el password debe tener minimo 6 caracteres
                             </small>
                         </div>
                         <button

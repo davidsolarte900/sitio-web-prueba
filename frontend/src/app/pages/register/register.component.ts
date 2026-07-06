@@ -10,6 +10,7 @@ import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-register',
+  standalone: true,
   imports: [
     CommonModule,
     ReactiveFormsModule,
@@ -18,6 +19,8 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
+
+
 export class RegisterComponent {
   private fb = inject(FormBuilder);
   private authService = inject(AuthService);
