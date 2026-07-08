@@ -1,4 +1,4 @@
-<body>
+
 <!--------------------------------------------encabezado-------------------------------------------->
 <header class="main-header">
 
@@ -13,9 +13,11 @@
         </a><!--/.logo-container-->
 
         <div class="menu-derecho">
-            <i class="bi bi-person"></i>
-            <i class="bi bi-cart"></i>
-        </div><!--/.menu-derecho-->
+            <a routerLink="/login" title="Iniciar sesión"><i class="bi bi-person"></i></a>
+            <a routerLink="/register" title="Registrarse"><i class="bi bi-person-plus"></i></a>
+            <a routerLink="/tasks" title="Carrito"><i class="bi bi-cart"></i></a>
+
+</div>
     </nav><!--/.menu-nav-->
 </header><!--/.main-header-->
     <!-----------------------------------------cuerpo----------------------------------------------->
@@ -73,23 +75,28 @@
         </article>
     </main>
 <!-----------------------------------------footer----------------------------------------------->
-    <footer class="site-footer">
-      <div class="footer-redes">
-        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></i></a>
-        <a href="#"aria-label="TikTok"><i class="bi bi-tiktok"></i></i></a>
-      </div>
-      <div class="footer-bottom">
-        <span>© 2026, Extensiones Dorani</span>
-        <ul class="footer-links">
-          <li><a href="#">Política de reembolso</a></li>
-          <li><a href="#">Política de privacidad</a></li>
-          <li><a href="#">Términos del servicio</a></li>
-          <li><a href="#">Política de envío</a></li>
-          <li><a href="#">Información de contacto</a></li>
-        </ul>
-      </div>
+<footer class="site-footer">
 
-    </footer>
-        <script src="js/index.js"></script>
-        
-</body> 
+    <div class="footer-redes">
+        <a href="#" aria-label="Instagram">
+            <i class="bi bi-instagram"></i>
+        </a>
+
+        <a href="#" aria-label="TikTok">
+            <i class="bi bi-tiktok"></i>
+        </a>
+    </div>
+
+    <div class="footer-bottom">
+        <span>© 2026, Extensiones Dorani</span>
+
+        <ul class="footer-links">
+            <li><a href="#">Política de reembolso</a></li>
+            <li><a href="#">Política de privacidad</a></li>
+            <li><a href="#">Términos del servicio</a></li>
+            <li><a href="#">Política de envío</a></li>
+            <li><a href="#">Información de contacto</a></li>
+        </ul>
+    </div>
+
+</footer>
