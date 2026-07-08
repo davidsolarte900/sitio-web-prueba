@@ -17,10 +17,11 @@ registrar(usuario: User): Observable<any> {
     usuario
   )
 };
-login(usuario: User): Observable<any> {
+login(credenciales: Pick<User, "email" | "password">): Observable<any> {
   return this.http.post(
-    `${this.api}/auth/login`,
-    usuario
+    `
+    ${this.api}/auth/login`,
+    credenciales
   )
 }
 };
