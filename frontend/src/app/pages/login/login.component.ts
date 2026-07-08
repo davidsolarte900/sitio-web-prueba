@@ -21,13 +21,6 @@ export class LoginComponent {
   error: string = '';
 
   form = this.fb.group({
-    nombre:[
-      '',
-      [
-        Validators.required,
-        Validators.minLength(3)
-      ]
-    ],
     email:[
       '',
       [
@@ -57,9 +50,8 @@ export class LoginComponent {
             console.log(respuesta);
         },
         error: (error) => {
-          this.error = 'error al iniciar sesion'
-          console.log(error)
-        }
+          this.error = error.error.msg || 'error al iniciar sesion'
+          }
       })
   }
 }
