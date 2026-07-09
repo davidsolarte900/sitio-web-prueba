@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { Producto } from '../../interfaces/producto.interface';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-catalogo',
   templateUrl: './catalogo.component.html',
-  styleUrls: ['./catalogo.component.css']
+  styleUrls: ['./catalogo.component.css'],
+  imports: [CommonModule]
+
 })
 export class CatalogoComponent {
 
@@ -30,6 +33,15 @@ export class CatalogoComponent {
       disponible:true
     },
 
+    {
+      id:3,
+      nombre:'Extensiones Castaño',
+      color:'#4',
+      largo:'20 pulgadas',
+      precio:295000,
+      imagen:'assets/productos/castano.jpg',
+      disponible:true
+    },
     {
       id:3,
       nombre:'Extensiones Castaño',
