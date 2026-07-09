@@ -1,0 +1,34 @@
+.menu-nav {
+    display: flex;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: fixed;
+    width: 100%;
+}
+.menu-izquierdo, .menu-derecho {
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+header .menu-nav:hover {
+    color: rgb(224, 13, 94);
+    margin-bottom: 20px;
+}
+
+.logo-container {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.site-logo {
+    max-height: 120px; /* Ajusta este valor según la altura de tu barra */
+    max-width: 90px;
+    width: auto;       /* Mantiene la proporción original sin deformar */
+    display: block;
+    object-fit: contain;
+    border-radius: 20px;
+}

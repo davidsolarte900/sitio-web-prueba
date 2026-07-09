@@ -19,5 +19,5 @@ import { RouterLink } from '@angular/router';
   ]
 })
 export class HomeComponent {
-  // Tu código TypeScript aquí
+
 }
