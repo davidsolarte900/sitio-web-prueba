@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+
+/* ===========================
+   COLORES EXTENSIONES DORANI
+=========================== */
+
+:root{
+    --color-principal:#d96b9b;
+    --color-principal-hover:#c15486;
+    --color-fondo:#fff7fb;
+    --color-texto:#333333;
+    --color-gris:#777777;
+    --color-blanco:#ffffff;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    color:var(--color-texto);
+    background:white;
+}

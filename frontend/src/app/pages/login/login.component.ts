@@ -42,12 +42,15 @@ export class LoginComponent {
       
       return;
     }
+
     this.authService
       .login(this.form.value as any)
       .subscribe({
         next: (respuesta) => {
             alert('iniciaste sesion');
             console.log(respuesta);
+            this.authService.guardarToken(respuesta.token);
+            console.log(this.authService.obtenerToken())
         },
         error: (error) => {
           this.error = error.error.msg || 'error al iniciar sesion'

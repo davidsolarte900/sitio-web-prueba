@@ -1,102 +1,11 @@
+<app-banner></app-banner>
 
-<!--------------------------------------------encabezado-------------------------------------------->
-<header class="main-header">
+<section class="container my-5">
+    <h2 class="text-center mb-5">
+        Productos Destacados
+    </h2>
+    <app-product-card></app-product-card>
+</section>
 
-    <nav class="menu-nav">
-        <div class="menu-izquierdo">
-            <i class="bi bi-list"></i>
-            <i class="bi bi-search"></i>
-        </div><!--/.menu-izquierdo-->
-
-        <a href="#" class="logo-container">
-            <img src="imagenes y videos/logo.jpeg" alt="Extensiones Dorani" class="site-logo">
-        </a><!--/.logo-container-->
-
-        <div class="menu-derecho">
-            <a routerLink="/login" title="Iniciar sesión"><i class="bi bi-person"></i></a>
-            <a routerLink="/register" title="Registrarse"><i class="bi bi-person-plus"></i></a>
-            <a routerLink="/tasks" title="Carrito"><i class="bi bi-cart"></i></a>
-
-</div>
-    </nav><!--/.menu-nav-->
-</header><!--/.main-header-->
-    <!-----------------------------------------cuerpo----------------------------------------------->
-    <section class="hero">
-        <div class="texto-1">
-            <h2> EXTENSIONES DORANI</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia omnis corporis repudiandae modi architecto id nisi, ex cupiditate quo, doloribus voluptatibus deleniti reprehenderit suscipit vitae error ducimus accusamus reiciendis ea accusantium ut neque? At ratione eaque quasi, non illum esse, autem assumenda amet, molestiae natus sint? Facere odio laborum cum?</p>
-        </div>
-        <div>
-            <video src="imagenes y videos/video ventas.mp4" controls muted autoplay ></video>
-        </div>
-    </section>
-    <!-----------------------------------------catalogo----------------------------------------------->
-    <h1>catalogo</h1>
-    <main>
-        <article>
-        <div class="image-container"><img src="imagenes y videos/cabeza peluca 23 pulgadas blanca accesorios 1.jfif" alt="cabeza maniqui herramienta"></div>
-        <p>cabeza peluca blanca tipo 1</p>
-        <p>$120000</p>
-        </article>
-        <article>
-        <div class="image-container"><img src="imagenes y videos/cabeza peluca 23 pulgadas blanca accesorios 2.png" alt="cabeza maniqui herramienta"></div>
-        <p>cabeza peluca blanca tipo 2</p>
-        <p>$160000</p>
-        </article>
-        <article>
-        <div class="image-container"><img src="imagenes y videos/cabeza peluca 23 pulgadas rosada accesorios 3.jfif" alt="cabeza maniqui herramienta"></div>
-        <p>cabeza peluca rosada tipo 3</p>
-        <p>$160000</p>
-        </article>
-        <article>
-        <div class="image-container"><img src="imagenes y videos/cierre frontal 13x4 hondulado.jfif" alt="cierre forntal 13x4"></div>
-        <p>cierre frontal 13x4 hondulado</p>
-        <p>$180000</p>
-        </article>
-        <article>
-        <div class="image-container"><img src="imagenes y videos/cierre frontal 4x4 liso.jfif" alt="cierre frontal 4x4 liso"></div>
-        <p>cierre frontal 4x4 liso</p>
-        <p>$120000</p>
-        </article>
-        <article>
-        <div class="image-container"><img src="imagenes y videos/cierre frontal 4x4 liso 2.png" alt="cierre frontal 4x4 liso"></div>
-        <span>cierre frontal 4x4 liso</span>
-        <p>$120000</p>
-        </article>
-        <article>
-        <div class="image-container"><img src="imagenes y videos/WhatsApp Image 2026-06-09 at 9.47.13 PM.jpeg" alt=""></div>
-        <p>cierre frontal 4x4 liso</p>
-        <p>$120000</p>
-        </article>
-        <article>
-        <div class="image-container"><img src="imagenes y videos/WhatsApp Image 2026-06-09 at 9.47.13 PM.jpeg" alt=""></div>
-        <p>cierre frontal 4x4 liso</p>
-        <p>$120000</p>
-        </article>
-    </main>
-<!-----------------------------------------footer----------------------------------------------->
-<footer class="site-footer">
-
-    <div class="footer-redes">
-        <a href="#" aria-label="Instagram">
-            <i class="bi bi-instagram"></i>
-        </a>
-
-        <a href="#" aria-label="TikTok">
-            <i class="bi bi-tiktok"></i>
-        </a>
-    </div>
-
-    <div class="footer-bottom">
-        <span>© 2026, Extensiones Dorani</span>
-
-        <ul class="footer-links">
-            <li><a href="#">Política de reembolso</a></li>
-            <li><a href="#">Política de privacidad</a></li>
-            <li><a href="#">Términos del servicio</a></li>
-            <li><a href="#">Política de envío</a></li>
-            <li><a href="#">Información de contacto</a></li>
-        </ul>
-    </div>
-
-</footer>
+<app-beneficios></app-beneficios>
+<app-footer></app-footer>

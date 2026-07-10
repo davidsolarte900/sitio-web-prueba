@@ -27,6 +27,10 @@ export const routes: Routes = [
     {
         path: 'catalogo',
             component: CatalogoComponent
-    }
-];
+    },
 
+{
+    path: '**',
+    redirectTo: ''
+}
+];
