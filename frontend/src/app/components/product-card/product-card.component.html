@@ -1,32 +1,19 @@
-<div class="row g-4">
-
-    <div
-        class="col-md-4"
-        *ngFor="let producto of productos">
-        <div class="card producto shadow-sm h-100">
-            <img
-                [src]="producto.imagen"
-                class="card-img-top">
-            <div class="card-body text-center">
-                <h5>
-                    {{ producto.nombre }}
-                </h5>
-                <p class="precio">
-                    {{ producto.precio | currency:'COP':'symbol':'1.0-0' }}
-                </p>
-                <button class="btn btn-dorani">
-                    Comprar
-                </button>
-                <div class="mt-4">
-                    <small class="text-muted">
-                    ✔ Envíos rápidos
-                    •
-                    ✔ Calidad Premium
-                    •
-                    ✔ Atención personalizada
-                    </small>
-                </div>
-            </div>
-        </div>
+<div class="card producto shadow h-100">
+    <img
+        [src]="'assets/productos/' + producto.imagen"
+        class="card-img-top">
+    <div class="card-body text-center">
+        <h5>
+            {{ producto.nombre }}
+        </h5>
+        <p>
+            {{ producto.descripcion }}
+        </p>
+        <h4 class="precio">
+            {{ producto.precio | currency:'COP':'symbol':'1.0-0' }}
+        </h4>
+        <button class="btn btn-dorani">
+            Comprar
+        </button>
     </div>
 </div>

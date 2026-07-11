@@ -48,10 +48,13 @@ export class LoginComponent {
       .subscribe({
         next: (respuesta) => {
             alert('iniciaste sesion');
-            console.log(respuesta);
             this.authService.guardarToken(respuesta.token);
-            console.log(this.authService.obtenerToken())
-        },
+            sessionStorage.setItem(
+              'usuario',
+              JSON.stringify(respuesta.usuario));
+              this.router.navigate(['/']);
+              location.reload();
+            },
         error: (error) => {
           this.error = error.error.msg || 'error al iniciar sesion'
           }

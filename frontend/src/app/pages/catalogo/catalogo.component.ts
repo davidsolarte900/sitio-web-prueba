@@ -1,57 +1,32 @@
-import { Component } from '@angular/core';
-import { Producto } from '../../interfaces/producto.interface';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+import { ProductoService } from '../../services/producto.service';
+import { Producto } from '../../interfaces/producto.interface';
+import { ProductCardComponent } from '../../components/product-card/product-card.component';
 
 @Component({
   selector: 'app-catalogo',
+  standalone: true,
+  imports: [
+    CommonModule,
+    ProductCardComponent
+  ],
   templateUrl: './catalogo.component.html',
-  styleUrls: ['./catalogo.component.css'],
-  imports: [CommonModule]
-
+  styleUrl: './catalogo.component.css'
 })
-export class CatalogoComponent {
-
-  productos: Producto[] = [
-
-    {
-      id:1,
-      nombre:'Extensiones Lisas',
-      color:'#1 Negro',
-      largo:'22 pulgadas',
-      precio:280000,
-      imagen:'assets/productos/negro.jpg',
-      disponible:true
-    },
-
-    {
-      id:2,
-      nombre:'Extensiones Rubio',
-      color:'#613',
-      largo:'24 pulgadas',
-      precio:320000,
-      imagen:'assets/productos/rubio.jpg',
-      disponible:true
-    },
-
-    {
-      id:3,
-      nombre:'Extensiones Castaño',
-      color:'#4',
-      largo:'20 pulgadas',
-      precio:295000,
-      imagen:'assets/productos/castano.jpg',
-      disponible:true
-    },
-    {
-      id:3,
-      nombre:'Extensiones Castaño',
-      color:'#4',
-      largo:'20 pulgadas',
-      precio:295000,
-      imagen:'assets/productos/castano.jpg',
-      disponible:true
-    }
-
-  ];
-
+export class CatalogoComponent implements OnInit {
+  private productoService = inject(ProductoService);
+  productos: Producto[] = [];
+  ngOnInit(): void {
+    this.productoService.obtenerProductos()
+      .subscribe({
+        next: (respuesta) => {
+          this.productos = respuesta;
+        },
+        error: (error) => {
+          console.error(error);
+        }
+      });
+  }
 }

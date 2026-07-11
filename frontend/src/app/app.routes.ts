@@ -4,6 +4,9 @@ import { RegisterComponent } from './pages/register/register.component';
 import { TaskComponent } from './pages/tasks/task.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CatalogoComponent } from './pages/catalogo/catalogo.component';
+import { AdminComponent } from './pages/admin/admin.component';
+
+
 
 
 
@@ -21,15 +24,18 @@ export const routes: Routes = [
             component: RegisterComponent
     },
     {
+        path:'catalogo',
+        component:CatalogoComponent
+    },
+    {
+    path: 'admin',
+    component: AdminComponent
+    },
+    {
         path: 'tasks',
             component: TaskComponent
     },
     {
-        path: 'catalogo',
-            component: CatalogoComponent
-    },
-
-{
     path: '**',
     redirectTo: ''
 }

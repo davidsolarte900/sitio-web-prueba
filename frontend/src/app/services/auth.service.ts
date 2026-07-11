@@ -1,34 +1,52 @@
-import { Injectable, inject} from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../environment/environment';
 import { Observable } from 'rxjs';
+
+import { environment } from '../../environment/environment';
 import { User } from '../interfaces/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-private http = inject(HttpClient);
-private api = environment.apiUrl;
 
-registrar(usuario: User): Observable<any> {
-  return this.http.post(
-    `${this.api}/auth/registrar`,
-    usuario
-  )
-};
-login(credenciales: Pick<User, "email" | "password">): Observable<any> {
-  return this.http.post(
-    `${this.api}/auth/login`,
-    credenciales
-  )
-}
-guardarToken(token: string): void{
-  sessionStorage.setItem('token',token);
-}
-obtenerToken(): string | null {
-  return sessionStorage.getItem('token');
-}
+  private http = inject(HttpClient);
+  private api = environment.apiUrl;
 
-};
+  registrar(usuario: User): Observable<any> {
+    return this.http.post(
+      `${this.api}/auth/registrar`,
+      usuario
+    );
+  }
 
+  login(credenciales: Pick<User, 'email' | 'password'>): Observable<any> {
+    return this.http.post(
+      `${this.api}/auth/login`,
+      credenciales
+    );
+  }
+
+  guardarToken(token: string): void {
+    sessionStorage.setItem('token', token);
+  }
+
+  obtenerToken(): string | null {
+    return sessionStorage.getItem('token');
+  }
+
+  obtenerUsuario() {
+    const usuario = sessionStorage.getItem('usuario');
+    return usuario ? JSON.parse(usuario) : null;
+  }
+
+  estaLogueado(): boolean {
+    return !!sessionStorage.getItem('token');
+  }
+
+  cerrarSesion(): void {
+    sessionStorage.removeItem('token');
+    sessionStorage.removeItem('usuario');
+  }
+
+}

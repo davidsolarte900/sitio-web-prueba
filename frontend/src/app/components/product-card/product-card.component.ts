@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Producto } from '../../interfaces/producto.interface';
 
 @Component({
   selector: 'app-product-card',
@@ -10,20 +11,6 @@ import { CommonModule } from '@angular/common';
 })
 export class ProductCardComponent {
 
-  productos = [{
-    nombre:"Extensión 22 pulgadas",
-    precio:350000,
-    imagen:"assets/productos/rubio.jpg"
-  },
-  {
-    nombre:"Extensión 20 pulgadas",
-    precio:320000,
-    imagen:"assets/productos/castano.jpg"
-  },
+  @Input() producto!: Producto;
 
-  {
-    nombre:"Extensión 21 pulgadas ",
-    precio:340000,
-    imagen:"assets/productos/negro.jpg"
-  }];
 }
