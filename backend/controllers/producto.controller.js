@@ -1,4 +1,4 @@
-const Producto = require('../models/Producto');
+const Producto = require('../models/producto');
 
 // Obtener todos los productos
 const obtenerProductos = async (req, res) => {
@@ -49,14 +49,14 @@ const actualizarProducto = async (req, res) => {
             req.body,
             { new: true }
         );
-            es.json(producto);
-        } catch (error) {
-            res.status(500).json({
-                msg: error.message
-            });
-        }
-    };
+        res.json(producto);
+    } catch (error) {
+        res.status(500).json({
+            msg: error.message
+        });
+    }
 
+};
 // Eliminado lógico
 const eliminarProducto = async (req, res) => {
     try {

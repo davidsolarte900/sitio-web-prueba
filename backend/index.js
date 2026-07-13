@@ -8,12 +8,6 @@ const task = require('./routes/task.routes');
 const cors = require('cors');
 const productos = require('./routes/producto.routes');
 
-
-
-
-
-
-
 connectDb();
 app.use(cors());
 app.use(express.json());

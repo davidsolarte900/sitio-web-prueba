@@ -42,19 +42,20 @@ const login  = async(request, response) => {
         const passwordsCoinciden = await bcrypt.compare(password, user.password);
         if(!passwordsCoinciden) return response.status(400).json({msg: 'constraseña incorrecta'});
 
-        const token = jwt.sign({id: user._id,rol: user.rol},
-            process.env.JWT_SECRET,
-            { expiresIn: '1h'});
+        const token = jwt.sign(
+            {
+            id: user._id,
+            rol: user.rol
+        },
+            process.env.JWT_SECRET,{expiresIn: '1h'});
 
             response.json({
                 token,
-                usuario:{
-                    id:user._id,
-                    nombre:user.nombre,
-                    email:user.email,
-                    rol:user.rol
-                }
-            });
+                usuario: {id: user._id,
+                    nombre: user.nombre,
+                    emil: user.email,
+                    rol: user.rol}
+                });
 
     } catch (error) {
         return response.status(500).json({ error: error.message });

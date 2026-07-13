@@ -16,17 +16,11 @@ import { AuthService } from '../../services/auth.service';
 export class NavbarComponent {
 
   private authService = inject(AuthService);
-
   usuario = this.authService.obtenerUsuario()
-
   estaLogueado = this.authService.estaLogueado();
-
   cerrarSesion(){
-
   this.authService.cerrarSesion();
-
   location.reload();
-
 }
 
   }

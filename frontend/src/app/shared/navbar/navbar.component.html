@@ -10,16 +10,18 @@
             <a routerLink="/catalogo">Catálogo</a>
         </div>
         <div class="nav-logo">
-            <a routerLink="/">
-            <img
-                src="assets/logo.png" alt="Extensiones Dorani" class="logo">
-            </a>
-        </div>
+    <a routerLink="/">
+        <img
+            src="assets/logo.png"
+            alt="Extensiones Dorani"
+            class="logo">
+    </a>
+</div>
 
         <div class="nav-right">
             <a href="#">Nosotros</a>
             <a href="#">Contacto</a>
-            <a href="#">🛍️</a>
+            <a href="#">🛒</a>
             <div *ngIf="!estaLogueado">
 
     <a routerLink="/login" class="nav-link">
@@ -45,32 +47,22 @@
         <li>
 
             <a class="dropdown-item"
-               routerLink="/perfil">
-
+            routerLink="/perfil">
                 Mi perfil
-
             </a>
-
         </li>
-
         <li *ngIf="usuario.rol==='admin'">
-
             <a
                 routerLink="/admin"
                 class="dropdown-item">
-
                 Administración
-
             </a>
-
         </li>
-
         <li>
 
             <button
                 class="dropdown-item"
                 (click)="cerrarSesion()">
-
                 Cerrar sesión
 
             </button>

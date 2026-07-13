@@ -5,6 +5,8 @@ import { TaskComponent } from './pages/tasks/task.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CatalogoComponent } from './pages/catalogo/catalogo.component';
 import { AdminComponent } from './pages/admin/admin.component';
+import { authGuard } from './guards/auth.guard';
+
 
 
 
@@ -28,8 +30,9 @@ export const routes: Routes = [
         component:CatalogoComponent
     },
     {
-    path: 'admin',
-    component: AdminComponent
+    path:'admin',
+    component:AdminComponent,
+    canActivate:[authGuard]
     },
     {
         path: 'tasks',

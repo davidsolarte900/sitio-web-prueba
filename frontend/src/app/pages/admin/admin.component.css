@@ -1,0 +1,21 @@
+.nav-link{
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.nav-link:hover{
+
+    background:#ffffff20;
+
+    border-radius:8px;
+
+}
+
+.card{
+
+    border:none;
+
+}

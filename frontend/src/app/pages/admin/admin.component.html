@@ -1,70 +1,165 @@
 <div class="container my-5">
-
     <div class="d-flex justify-content-between align-items-center mb-4">
-
-        <h2>Administración de Productos</h2>
-
+        <h2>
+            📦 Administración de Productos
+        </h2>
         <button
-            class="btn btn-success">
+    class="btn btn-success"
+    data-bs-toggle="modal"
+    data-bs-target="#modalProducto">
 
-            + Nuevo Producto
+    ➕ Nuevo Producto
 
-        </button>
-
+</button>
     </div>
-
-    <table class="table table-striped table-hover">
-
-        <thead>
-
+    <table class="table table-hover table-bordered align-middle">
+        <thead class="table-light">
             <tr>
-
                 <th>Imagen</th>
-
                 <th>Nombre</th>
-
+                <th>Categoría</th>
                 <th>Precio</th>
-
                 <th>Stock</th>
-
                 <th>Acciones</th>
-
             </tr>
-
         </thead>
-
         <tbody>
-
-            <tr>
-
-                <td>🖼️</td>
-
-                <td>Rubio Cenizo</td>
-
-                <td>$350.000</td>
-
-                <td>10</td>
-
+            <tr *ngFor="let producto of productos">
                 <td>
-
-                    <button class="btn btn-warning btn-sm me-2">
-
-                        Editar
-
-                    </button>
-
-                    <button class="btn btn-danger btn-sm">
-
-                        Eliminar
-
-                    </button>
-
+                    <img
+                        [src]="'assets/productos/' + producto.imagen"
+                        width="70"
+                        alt="Producto">
                 </td>
-
+                <td>
+                    {{ producto.nombre }}
+                </td>
+                <td>
+                    {{ producto.categoria }}
+                </td>
+                <td>
+                    {{ producto.precio | currency:'COP':'symbol':'1.0-0' }}
+                </td>
+                <td>
+                    {{ producto.stock }}
+                </td>
+                <td>
+                    <button class="btn btn-warning btn-sm me-2">
+                        ✏️
+                    </button>
+                    <button class="btn btn-danger btn-sm">
+                        🗑️
+                    </button>
+                </td>
             </tr>
-
         </tbody>
-
     </table>
+    <div
+        class="modal fade"
+        id="modalProducto"
+        tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        📦 Nuevo Producto
+                    </h5>
+                    <button
+                        class="btn-close"
+                        data-bs-dismiss="modal">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="form">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">
+                                    Nombre
+                                </label>
+                                <input
+                                    class="form-control"
+                                    formControlName="nombre">
+                            </div>
+                            <div class="col-12 mb-3">
 
+    <label class="form-label">
+        Descripción
+    </label>
+
+    <textarea
+        class="form-control"
+        formControlName="descripcion">
+    </textarea>
+
+</div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">
+                                    Categoría
+                                </label>
+                                <input
+                                    class="form-control"
+                                    formControlName="categoria">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">
+                                    Precio
+
+                                </label>
+                                <input
+                                    type="number"
+                                    class="form-control"
+                                    formControlName="precio">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">
+                                    Stock
+                                </label>
+                                <input
+                                    type="number"
+                                    class="form-control"
+                                    formControlName="stock">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">
+                                    Color
+                                </label>
+                                <input
+                                    class="form-control"
+                                    formControlName="color">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">
+                                    Pulagadas
+                                </label>
+                                <input
+                                    class="form-control"
+                                    formControlName="largo">
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">
+                                    Imagen
+                                </label>
+                                <input
+                                    class="form-control"
+                                    formControlName="imagen">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+                        Cancelar
+                    </button>
+                    <button
+                        class="btn btn-success"
+                        type="button"
+                        (click)="guardarProducto()">
+                        Guardar Producto
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
