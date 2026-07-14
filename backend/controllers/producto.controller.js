@@ -28,18 +28,22 @@ const obtenerProducto = async (req, res) => {
     }
 };
 
-// Crear producto
+// Crear producto y agregar imagen
 const crearProducto = async (req, res) => {
     try {
-        const producto = new Producto(req.body);
+        const datos = {
+            ...req.body,
+            imagen: req.file ? req.file.filename : ''
+        };
+        const producto = new Producto(datos);
         await producto.save();
         res.status(201).json(producto);
     } catch (error) {
         res.status(500).json({
             msg: error.message
-        });
+        })
     }
-};
+}
 
 // Actualizar producto
 const actualizarProducto = async (req, res) => {
@@ -84,4 +88,4 @@ module.exports = {
     actualizarProducto,
     eliminarProducto
 
-};
+}

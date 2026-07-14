@@ -22,13 +22,10 @@ user = new User({
 });
 
 await user.save();
-
         return response.status(201).json({
             msg: "el usuario se a registrado correctamente"
         });
-
     } catch (error) {
-
         return response.status(500).json({ error: error.message });
     }
 };

@@ -7,20 +7,19 @@ const auth = require('./routes/auth.routes');
 const task = require('./routes/task.routes');
 const cors = require('cors');
 const productos = require('./routes/producto.routes');
+const path = require('path');
 
 connectDb();
 app.use(cors());
 app.use(express.json());
 
+app.use('/uploads',express.static(path.join(__dirname, 'uploads')));
+
 app.use('/api/auth', auth); 
 app.use('/api/productos', productos);
 app.use('/api/task', task);
 
-
-
-
 const PORT = process.env.PORT
-
 app.listen(PORT, () => {
     console.log(`conectamos a puerto ${PORT}`)
 });

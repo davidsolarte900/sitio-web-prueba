@@ -38,8 +38,7 @@ export class LoginComponent {
   })
   iniciarSesion(){
     if(this.form.invalid) {
-      this.form.markAsTouched();
-      
+      this.form.markAsTouched();      
       return;
     }
 

@@ -1,6 +1,6 @@
 <!-- Barra superior -->
 <div class="top-bar text-center py-2">
-🚚 Envíos contra entrega Cali y Jamundi |🚚 Envíos a todo Colombia | 💖 Cabello 100% Natural | 📱 Atención por WhatsApp
+    Envíos contra entrega Cali y Jamundi | Envíos a todo Colombia | Cabello 100% Natural | Atención por WhatsApp
 </div>
 
 <nav class="navbar shadow-sm">
@@ -10,68 +10,52 @@
             <a routerLink="/catalogo">Catálogo</a>
         </div>
         <div class="nav-logo">
-    <a routerLink="/">
-        <img
+            <a routerLink="/">
+            <img
             src="assets/logo.png"
             alt="Extensiones Dorani"
             class="logo">
-    </a>
-</div>
+            </a>
+        </div>
 
         <div class="nav-right">
             <a href="#">Nosotros</a>
             <a href="#">Contacto</a>
             <a href="#">🛒</a>
             <div *ngIf="!estaLogueado">
-
-    <a routerLink="/login" class="nav-link">
-
-        Iniciar sesión
-
-    </a>
-
-</div>
-
-<div class="dropdown" *ngIf="estaLogueado">
-
-    <button
-        class="btn btn-link dropdown-toggle text-dark"
-        data-bs-toggle="dropdown">
-
-        Hola {{ usuario.nombre }}
-
-    </button>
-
-    <ul class="dropdown-menu">
-
-        <li>
-
-            <a class="dropdown-item"
-            routerLink="/perfil">
-                Mi perfil
-            </a>
-        </li>
-        <li *ngIf="usuario.rol==='admin'">
-            <a
-                routerLink="/admin"
-                class="dropdown-item">
-                Administración
-            </a>
-        </li>
-        <li>
-
-            <button
+                <a routerLink="/login" class="nav-link">
+                    Iniciar sesión
+                </a>
+            </div>
+            <div class="dropdown" *ngIf="estaLogueado">
+                <button
+                    class="btn btn-link dropdown-toggle text-dark"
+                    data-bs-toggle="dropdown">
+                    Hola {{ usuario.nombre }}
+                </button>
+                <ul class="dropdown-menu">
+                <li>
+                <a class="dropdown-item"
+                    routerLink="/perfil">
+                    Mi perfil
+                </a>
+                </li>
+                <li *ngIf="usuario.rol==='admin'">
+                <a
+                    routerLink="/admin"
+                    class="dropdown-item">
+                    Administración
+                </a>
+                </li>
+                <li>
+                <button
                 class="dropdown-item"
                 (click)="cerrarSesion()">
                 Cerrar sesión
-
-            </button>
-
-        </li>
-
-    </ul>
-
-</div>
+                </button>
+                </li>
+                </ul>
+            </div>
         </div>
     </div>
 </nav>

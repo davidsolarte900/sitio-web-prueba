@@ -1,5 +1,6 @@
 const verificarToken = require('../middlewares/auth.middleware');
 const verificarAdmin = require('../middlewares/admin.middleware');
+const upload = require('../middlewares/upload.middleware');
 
 const express = require('express');
 const router = express.Router();
@@ -21,6 +22,7 @@ router.post(
     '/',
     verificarToken,
     verificarAdmin,
+    upload.single('imagen'),
     crearProducto
 );
 

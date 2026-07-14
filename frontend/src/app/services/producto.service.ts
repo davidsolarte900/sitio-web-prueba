@@ -16,49 +16,27 @@ obtenerProductos():Observable<Producto[]>{
 return this.http.get<Producto[]>(`${this.api}/productos`);
 };
 
-crearProducto(producto: any): Observable<any> {
-
+crearProducto(datos: FormData): Observable<any> {
     const token = sessionStorage.getItem('token');
+    return this.http.post(
+        `${this.api}/productos`,
+        datos,{ headers: { Authorization: `Bearer ${token}`}
+        }
+    )
+};
 
-console.log('TOKEN ENVIADO:', token);
-
-return this.http.post(
-  `${this.api}/productos`,
-  producto,
-  {
-    headers: {
-      Authorization: `Bearer ${token}`
-    }
-  }
-);
-}
 actualizarProducto(id: string, producto: any): Observable<any> {
-
     const token = sessionStorage.getItem('token');
-
     return this.http.put(
         `${this.api}/productos/${id}`,
-        producto,
-        {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        }
-    );
+        producto,{headers:{Authorization: `Bearer ${token}`}})
 }
 
     eliminarProducto(id: string): Observable<any> {
-
     const token = sessionStorage.getItem('token');
-
     return this.http.delete(
         `${this.api}/productos/${id}`,
-        {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        }
-    );
+        {headers: {Authorization: `Bearer ${token}`}});
 }};
 
 
