@@ -1,19 +1,15 @@
-<div class="card producto shadow h-100">
-    <img
-        [src]="'assets/productos/' + producto.imagen"
-        class="card-img-top">
+<!-- Envolvemos el div principal con *ngIf para proteger todo el componente -->
+<div class="card producto shadow h-100" *ngIf="producto">
+    
+    <img [src]="'http://localhost:3000/uploads/productos/' + producto.imagen"
+        alt="Producto"
+        class="card-img-top"
+        style="height: 250px; object-fit: cover;">
     <div class="card-body text-center">
-        <h5>
-            {{ producto.nombre }}
-        </h5>
-        <p>
-            {{ producto.descripcion }}
-        </p>
-        <h4 class="precio">
-            {{ producto.precio | currency:'COP':'symbol':'1.0-0' }}
-        </h4>
-        <button class="btn btn-dorani">
-            Comprar
-        </button>
+        <h5>{{ producto.nombre }}</h5>
+        <p>{{ producto.descripcion }}</p>
+        <p class="fw-bold">${{ producto.precio }}</p>
     </div>
+    
 </div>
+

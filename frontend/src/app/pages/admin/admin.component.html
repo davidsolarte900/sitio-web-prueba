@@ -24,10 +24,10 @@
         <tbody>
             <tr *ngFor="let producto of productos">
                 <td>
-                    <img
-                        [src]="'assets/productos/' + producto.imagen"
-                        width="70"
-                        alt="Producto">
+                    <img [src]="'http://localhost:3000/uploads/productos/' + producto.imagen" 
+                    alt="Product" 
+                    style="width: 50px; height: 50px; object-fit: cover;">
+
                 </td>
                 <td>
                     {{ producto.nombre }}
@@ -122,15 +122,11 @@
                                 class="form-control"
                                 formControlName="stock">
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <label class="form-label">
-                                Color
-                            </label>
-                            <input
-                            type="file"
-                            class="form-control"
-                            accept="image/*"
-                            (change)="seleccionarImagen($event)">
+                        <div class="row">
+                            <div class="col-md-12">
+                            <label for="inputFile">Seleccionar archivo</label>
+                            <input type="file" id="inputFile" (change)="onFileSelected($event)" class="form-control">
+                            </div>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label class="form-label">
@@ -139,15 +135,7 @@
                             <input
                                 class="form-control"
                                 formControlName="largo">
-                        </div>
-                        <div class="col-12">
-                            <label class="form-label">
-                                Imagen
-                            </label>
-                            <input
-                                class="form-control"
-                                formControlName="imagen">
-                        </div>
+                        </div>                        
                     </div>
                 </div>
                 <div class="modal-footer">

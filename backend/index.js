@@ -9,11 +9,14 @@ const cors = require('cors');
 const productos = require('./routes/producto.routes');
 const path = require('path');
 
+
+
 connectDb();
 app.use(cors());
 app.use(express.json());
 
-app.use('/uploads',express.static(path.join(__dirname, 'uploads')));
+app.use('/uploads', express.static('uploads'));
+
 
 app.use('/api/auth', auth); 
 app.use('/api/productos', productos);

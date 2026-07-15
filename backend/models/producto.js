@@ -19,12 +19,12 @@ const productoSchema = new mongoose.Schema({
 
     color:{
         type:String,
-        required:true
+        required:false
     },
 
     largo:{
         type:String,
-        required:true
+        required:false  
     },
 
     categoria:{

@@ -4,7 +4,14 @@
     <h2 class="text-center mb-5">
         Productos Destacados
     </h2>
-    <app-product-card></app-product-card>
+    
+    <!-- Creamos la fila y usamos el bucle *ngFor para recorrer los productos del backend -->
+    <div class="row g-4 justify-content-center">
+        <div class="col-md-4" *ngFor="let destacado of productos">
+            <!-- Le inyectamos la propiedad [producto] para que la tarjeta sepa qué dibujar -->
+            <app-product-card [producto]="destacado"></app-product-card>
+        </div>
+    </div>
 </section>
 
 <app-beneficios></app-beneficios>

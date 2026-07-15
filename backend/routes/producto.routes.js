@@ -22,8 +22,8 @@ router.post(
     '/',
     verificarToken,
     verificarAdmin,
-    upload.single('imagen'),
-    crearProducto
+    upload.single('imagen'), 
+    crearProducto // <-- AQUÍ: Debe decir solo crearProducto
 );
 
 router.put(
