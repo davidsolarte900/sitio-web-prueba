@@ -4,7 +4,7 @@
 }
 
 .hero h5{
-    color:#d96b9b;
+    color:#ff4f8a;
     letter-spacing:3px;
     font-weight:700;
 }
@@ -22,7 +22,7 @@
 }
 
 .btn-dorani{
-    background:#d96b9b;
+    background:#ff4f8a;
     color:white;
     padding:15px 40px;
     border-radius:40px;
@@ -30,7 +30,7 @@
 }
 
 .btn-dorani:hover{
-    background:#c15486;
+    background:#ff4f8a;
     color:white;
 }
 

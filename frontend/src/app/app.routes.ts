@@ -6,40 +6,40 @@ import { HomeComponent } from './pages/home/home.component';
 import { CatalogoComponent } from './pages/catalogo/catalogo.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { authGuard } from './guards/auth.guard';
-
-
-
-
-
+import { CarritoComponent } from './pages/carrito/carrito.component';
 
 export const routes: Routes = [
     {
         path: '',
-    component: HomeComponent
-},
+        component: HomeComponent
+    },
     {
         path: 'login',
-            component: LoginComponent
+        component: LoginComponent
     },
     {
         path: 'register',
-            component: RegisterComponent
+        component: RegisterComponent
     },
     {
-        path:'catalogo',
-        component:CatalogoComponent
+        path: 'catalogo',
+        component: CatalogoComponent
     },
     {
-    path:'admin',
-    component:AdminComponent,
-    canActivate:[authGuard]
+        path: 'admin',
+        component: AdminComponent,
+        canActivate: [authGuard]
     },
     {
         path: 'tasks',
-            component: TaskComponent
+        component: TaskComponent
+    },
+    {   
+        path: 'carrito',
+        component: CarritoComponent 
     },
     {
-    path: '**',
-    redirectTo: ''
-}
+        path: '**',
+        redirectTo: ''
+    }
 ];

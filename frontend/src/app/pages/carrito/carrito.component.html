@@ -1,0 +1,61 @@
+<div class="container my-5">
+    <h2 class="mb-4 text-center">Tu Carrito de Compras</h2>
+
+    <!-- Si el carrito está vacío -->
+    <div *ngIf="productos().length === 0" class="text-center my-5">
+        <i class="bi bi-cart-x text-muted" style="font-size: 4rem;"></i>
+        <p class="fs-4 mt-3 text-muted">Tu carrito está vacío actualmente.</p>
+        <button routerLink="/catalogo" class="btn btn-primary mt-2" style="background-color: #ff4f8a; border: none;">
+            Ver Catálogo de Extensiones
+        </button>
+    </div>
+
+    <!-- Si el carrito tiene productos -->
+    <div class="row g-4" *ngIf="productos().length > 0">
+        <div class="col-md-8">
+            <div class="card shadow-sm p-3">
+                <div class="table-responsive">
+                    <table class="table align-middle">
+                        <thead>
+                            <tr>
+                                <th>Imagen</th>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let item of productos()">
+                                <td>
+                                    <img [src]="'http://localhost:3000/uploads/productos/' + item.imagen" 
+                                        alt="Extensiones" 
+                                        style="width: 60px; height: 60px; object-fit: cover; border-radius: 5px;">
+                                </td>
+                                <td>
+                                    <h6 class="mb-0">{{ item.nombre }}</h6>
+                                    <small class="text-muted">{{ item.largo }} pulgadas</small>
+                                </td>
+                                <td class="fw-bold" style="color: #ff4f8a;">${{ item.precio }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resumen de Compra -->
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4 text-center">
+                <h4>Resumen del Pedido</h4>
+                <hr>
+                <div class="d-flex justify-content-between fs-5 my-3">
+                    <span>Total a pagar:</span>
+                    <span class="fw-bold" style="color: #ff4f8a;">${{ totalPagar }}</span>
+                </div>
+                <button class="btn btn-success w-100 p-2 mt-2">
+                    <i class="bi bi-whatsapp"></i> Hacer Pedido por WhatsApp
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,15 +1,24 @@
-<!-- Envolvemos el div principal con *ngIf para proteger todo el componente -->
 <div class="card producto shadow h-100" *ngIf="producto">
     
     <img [src]="'http://localhost:3000/uploads/productos/' + producto.imagen"
         alt="Producto"
         class="card-img-top"
         style="height: 250px; object-fit: cover;">
-    <div class="card-body text-center">
-        <h5>{{ producto.nombre }}</h5>
-        <p>{{ producto.descripcion }}</p>
-        <p class="fw-bold">${{ producto.precio }}</p>
+    <div class="card-body text-center d-flex flex-column justify-content-between">
+        <div>
+            <h5>{{ producto.nombre }}</h5>
+            <p>{{ producto.descripcion }}</p>
+            <p class="fw-bold" style="font-size: 1.8rem; color: #36aa48;">${{ producto.precio }}</p>
+        </div>
+        
+        <!-- BOTÓN DE COMPRA -->
+        <button class="btn btn-primary w-100 mt-3" 
+                (click)="agregarAlCarrito(producto)"
+                style="background-color: #ff4f8a; border: none;">
+            <i class="bi bi-cart-plus"></i> Comprar
+        </button>
     </div>
     
 </div>
+
 

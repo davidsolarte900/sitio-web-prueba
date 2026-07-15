@@ -7,7 +7,7 @@
             class="btn btn-success"
             data-bs-toggle="modal"
             data-bs-target="#modalProducto">
-            🆕 Nuevo Producto
+            Nuevo Producto
         </button>
     </div>
     <table class="table table-hover table-bordered align-middle">
@@ -43,16 +43,18 @@
                 </td>
                 <td>
                     <button
-                        class="btn btn-warning btn-sm me-2"
-                        (click)="editarProducto(producto)"
-                        data-bs-toggle="modal"
-                        data-bs-target="#modalProducto">
-                        ✍
+                    class="btn btn-primary btn-sm me-2"
+                    (click)="editarProducto(producto)"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalProducto"
+                    style="background-color: #0d6efd; border: none;">
+                    Editar
                     </button>
                     <button
-                        class="btn btn-danger btn-sm"
-                        (click)="eliminarProducto(producto._id)">
-                        🚮
+                    lass="btn btn-sm text-white"
+                    (click)="eliminarProducto(producto._id)"
+                    style="background-color: #d6487e; border: none;">
+                    Eliminar
                     </button>
                 </td>
             </tr>

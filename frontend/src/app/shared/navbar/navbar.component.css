@@ -1,9 +1,37 @@
-.top-bar{
-    background:#555052;
-    color:white;
-    font-weight:600;
-    font-size:14px;
+.top-bar-marquee {
+  background-color: #444141;
+  color: #ffffff;
+  padding: 10px 0;
+  font-size: 0.9rem;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
 }
+
+.marquee-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: traslado-completo 30s linear infinite; /* Subimos a 30s para que vaya suave al tener más texto */
+}
+
+.marquee-content span {
+  display: inline-block;
+  padding-right: 60px; /* Espacio ideal entre cada bloque de texto */
+}
+
+/* Animación ajustada para el traslado de texto largo */
+@keyframes traslado-completo {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-25%, 0, 0); /* Cambiado a -25% para que acople perfecto con las 4 repeticiones */
+  }
+}
+
+
+
 
 .navbar{
     background:white;

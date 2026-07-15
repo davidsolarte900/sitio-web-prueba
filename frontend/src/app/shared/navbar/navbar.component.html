@@ -1,7 +1,13 @@
 <!-- Barra superior -->
-<div class="top-bar text-center py-2">
-    Envíos contra entrega Cali y Jamundi | Envíos a todo Colombia | Cabello 100% Natural | Atención por WhatsApp
+<div class="top-bar-marquee">
+  <div class="marquee-content">
+    <span> 🚚 Envíos contra entrega Cali y Jamundí | 🛫 Envíos Nacionales e Internsacionales | 👧 Cabello 100% Natural | 📱 Atención por WhatsApp</span>
+    <span> 🚚 Envíos contra entrega Cali y Jamundí | 🛫 Envíos Nacionales e Internsacionales | 👧 Cabello 100% Natural | 📱 Atención por WhatsApp</span>
+    <span> 🚚 Envíos contra entrega Cali y Jamundí | 🛫 Envíos Nacionales e Internsacionales | 👧 Cabello 100% Natural | 📱 Atención por WhatsApp</span>
+  </div>
 </div>
+
+
 
 <nav class="navbar shadow-sm">
     <div class="container">
@@ -12,7 +18,8 @@
         <div class="nav-logo">
             <a routerLink="/">
             <!-- Cambia src="assets/logo.png" por esto -->
-                            <img src="http://localhost:3000/uploads/logo.png" alt="Extensiones Dorani" style="height: 50px;">
+                            <img src="http://localhost:3000/uploads/logo.png" alt="Extensiones Dorani" style="height: 60px;">
+
 
             </a>
         </div>
@@ -20,7 +27,15 @@
         <div class="nav-right">
             <a href="#">Nosotros</a>
             <a href="#">Contacto</a>
-            <a href="#">🛒</a>
+            <a routerLink="/carrito" class="btn position-relative">
+                <i class="bi bi-cart" style="font-size: 1.3rem;"></i>
+                <!-- Si hay elementos en el carrito, se dibuja la burbuja rosada con el número -->
+                    <span *ngIf="totalItems > 0" 
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill"
+                    style="background-color: #d96a95; font-size: 0.75rem;">{{ totalItems }}
+                    </span>
+            </a>
+
             <div *ngIf="!estaLogueado">
                 <a routerLink="/login" class="nav-link">
                     Iniciar sesión
