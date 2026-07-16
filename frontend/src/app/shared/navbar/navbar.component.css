@@ -79,3 +79,26 @@
 .nav-right a:hover{
     color:#d96b9b;
 }
+/* Estilos para que se distribuya simétricamente en computadoras */
+@media (min-width: 992px) {
+  .position-lg-absolute {
+    position: absolute !important;
+  }
+  .start-lg-50 {
+    left: 50% !important;
+  }
+  .translate-lg-middle {
+    transform: translateX(-50%) !important;
+    z-index: 1050;
+  }
+}
+
+/* Ajustes limpios para los enlaces en móvil */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background-color: #ffffff;
+    padding-bottom: 15px;
+    border-top: 1px solid #f0f0f0;
+    margin-top: 10px;
+  }
+}
